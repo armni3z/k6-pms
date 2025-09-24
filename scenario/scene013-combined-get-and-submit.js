@@ -30,14 +30,7 @@ const header4 = header["user4"];
 const header5 = header["user5"];
 const header6 = header["user6"];
 
-const headers = [
-  header1,
-  header2,
-  header3,
-  header4,
-  header5,
-  header6,
-];
+const headers = [header1, header2, header3, header4, header5, header6];
 
 // Load submit body schemas
 const bodySchema1 = JSON.parse(open("../data/body/submit_step1_body.json"));
@@ -56,14 +49,7 @@ const bodySchema = [
   bodySchema6,
 ];
 
-const pmFormId = [
-  "94624",
-  "94625",
-  "94626",
-  "94627",
-  "94628",
-  "94629",
-];
+const pmFormId = ["94624", "94625", "94626", "94627", "94628", "94629"];
 
 const stepNumbers = [1, 2, 3, 4, 5, 6, 7];
 
@@ -118,8 +104,7 @@ export default function () {
       console.log(`📡 Endpoint: ${endpoint_names[i]}`);
       console.log(`📊 Status Code: ${responses_to_check[i].status}`);
       console.log(`📄 Response Body: ${responses_to_check[i].body}`);
-      console.log(`🛑 Stopping entire test execution due to API error.`);
-      console.log("=".repeat(80) + "\n");
+      console.log("\n" + "=".repeat(30) + "\n");
       abort();
     }
   }
@@ -142,7 +127,7 @@ export default function () {
     console.log(`📡 Operation: Parse JSON response from GET APIs`);
     console.log(`❌ Error: ${error.message}`);
     console.log(`🛑 Stopping entire test execution due to JSON parsing error.`);
-    console.log("=".repeat(80) + "\n");
+    console.log("\n" + "=".repeat(30) + "\n");
     abort();
   }
 
@@ -194,7 +179,7 @@ export default function () {
     console.log(`📡 Operation: Validate GET API responses`);
     console.log(`❌ Issue: One or more GET API validations failed`);
     console.log(`🛑 Stopping entire test execution due to validation error.`);
-    console.log("=".repeat(80) + "\n");
+    console.log("\n" + "=".repeat(30) + "\n");
     abort();
   }
 
@@ -215,7 +200,7 @@ export default function () {
     console.log(
       `🛑 Stopping entire test execution due to restore-performance failure.`
     );
-    console.log("=".repeat(80) + "\n");
+    console.log("\n" + "=".repeat(30) + "\n");
     abort();
   }
 
@@ -244,8 +229,7 @@ export default function () {
     console.log(`📡 Endpoint: submit-pm-form`);
     console.log(`📊 Status Code: ${submitResponse.status}`);
     console.log(`📄 Response Body: ${submitResponse.body}`);
-    console.log(`🛑 Stopping entire test execution due to API error.`);
-    console.log("=".repeat(80) + "\n");
+    console.log("\n" + "=".repeat(30) + "\n");
     abort();
   }
 
@@ -262,7 +246,7 @@ export default function () {
     console.log(`❌ Error: ${error.message}`);
     console.log(`📄 Response Body: ${submitResponse.body}`);
     console.log(`🛑 Stopping entire test execution due to JSON parsing error.`);
-    console.log("=".repeat(80) + "\n");
+    console.log("\n" + "=".repeat(30) + "\n");
     abort();
   }
 
@@ -281,7 +265,7 @@ export default function () {
     console.log(`❌ Issue: Submit validation failed`);
     console.log(`📄 Response Data: Step${userIndex + 1}: ${bodyString}`);
     console.log(`🛑 Stopping entire test execution due to validation error.`);
-    console.log("=".repeat(80) + "\n");
+    console.log("\n" + "=".repeat(30) + "\n");
     abort();
   }
 }
@@ -307,8 +291,7 @@ function restorePerformance(baseUrl, header, userIndex) {
     console.log(`📡 Endpoint: restore-performance`);
     console.log(`📊 Status Code: ${response.status}`);
     console.log(`📄 Response Body: ${response.body}`);
-    console.log(`🛑 Stopping entire test execution due to API error.`);
-    console.log("=".repeat(80) + "\n");
+    console.log("\n" + "=".repeat(30) + "\n");
     abort();
   }
 
@@ -327,7 +310,7 @@ function restorePerformance(baseUrl, header, userIndex) {
     console.log(`❌ Error: ${error.message}`);
     console.log(`📄 Response Body: ${response.body}`);
     console.log(`🛑 Stopping entire test execution due to JSON parsing error.`);
-    console.log("=".repeat(80) + "\n");
+    console.log("\n" + "=".repeat(30) + "\n");
     abort();
   }
 
@@ -349,7 +332,7 @@ function restorePerformance(baseUrl, header, userIndex) {
     );
     console.log(`📄 Response Data: ${bodyString}`);
     console.log(`🛑 Stopping entire test execution due to validation error.`);
-    console.log("=".repeat(80) + "\n");
+    console.log("\n" + "=".repeat(30) + "\n");
     abort();
   }
 
